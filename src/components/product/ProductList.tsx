@@ -12,11 +12,19 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import NewArrivalLogoSvg from "@/svg/NewArrivalLogoSvg";
+import { Button } from "../ui/button";
+import ProductModal from "./ProductModal";
 
 function ProductList() {
   const [totalPages, setTotalPages] = useState(0);
   const [page, setPage] = useState(1);
   const [limit] = useState(12);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const addNew = () => {
+    // Add new product functionality
+    setIsOpen(true);
+  };
 
   useEffect(() => {
     const total = 20;
@@ -68,10 +76,13 @@ function ProductList() {
       </div>
       <div className="relative left-0 right-0 top-60 z-20">
         <div className="mx-auto w-[90%]">
-          <h3 className="flex items-center gap-4 py-8 text-2xl font-bold text-black">
-            <NewArrivalLogoSvg />
-            New Arrivals
-          </h3>
+          <div className="flex items-center justify-between">
+            <h3 className="flex items-center gap-4 py-8 text-2xl font-bold text-black">
+              <NewArrivalLogoSvg />
+              New Arrivals
+            </h3>
+            <Button onClick={addNew}>Add New</Button>
+          </div>
           <div className="my-3 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {/* Render product cards here */}
             <ProductCard />
@@ -83,6 +94,7 @@ function ProductList() {
           />
         </div>
       </div>
+      <ProductModal isOpen={isOpen} setIsOpen={setIsOpen} />
     </section>
   );
 }

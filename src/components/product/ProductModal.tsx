@@ -13,10 +13,15 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-function MyProductModal() {
+interface ModalProps {
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function ProductModal({ isOpen, setIsOpen }: ModalProps) {
   return (
-    <Dialog open={false} onOpenChange={close}>
-      <DialogContent className="ml-2 mr-2 w-full max-w-full overflow-y-scroll lg:w-[1028px]">
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <DialogContent className="ml-2 mr-2 w-full max-w-full overflow-y-scroll overflow-hidden lg:w-[1028px]">
         <DialogHeader>
           <DialogTitle className="text-lg">Product Variants</DialogTitle>
         </DialogHeader>
@@ -48,5 +53,3 @@ function MyProductModal() {
     </Dialog>
   );
 }
-
-export default MyProductModal;
