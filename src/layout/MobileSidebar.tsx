@@ -34,24 +34,6 @@ export function MobileSidebar() {
       icon: "Shirt",
       label: "myProduct",
     },
-    {
-      title: "Orders",
-      href: `${ROUTES.DASHBOARD.ORDERS}`,
-      icon: "ShoppingBag",
-      label: "orders",
-    },
-    {
-      title: "Support Ticket",
-      href: `${ROUTES.DASHBOARD.SUPPORT_TICKET}`,
-      icon: "HeartHandshake",
-      label: "orders",
-    },
-    {
-      title: "Connect Store",
-      href: `${ROUTES.DASHBOARD.CONNECT_STORE}`,
-      icon: "add",
-      label: "Dashboard",
-    },
   ]);
   return (
     <Sheet open={open} onOpenChange={setOpen}>

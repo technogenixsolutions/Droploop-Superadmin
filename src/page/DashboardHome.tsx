@@ -1,10 +1,3 @@
-import { ChevronRight } from "lucide-react";
-
-import { DashboardCharts } from "../components/DashboardHome/DashboardCharts";
-import ProgressComponents from "../components/DashboardHome/ProgressComponents";
-
-import { ROUTES } from "@/routes";
-
 export default function DashboardHome() {
   return (
     <div className="relative z-0 bg-gray-50">
@@ -13,56 +6,99 @@ export default function DashboardHome() {
       </header>
 
       <div className="relative left-0 right-0 top-16 z-20 space-y-6 p-6">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          <div className="col-span-2">
-            <DashboardCharts />
-          </div>
-
-          <div className="flex flex-col gap-10">
-            <div className="rounded-lg bg-white p-6 shadow">
-              <div className="flex items-center justify-between text-sm text-gray-900">
-                <h2 className="mb-4 text-xl font-semibold">Overview</h2>
-                <div>Last 7 Days</div>
-              </div>
-              <div className="mt-4 space-y-4">
-                <div className="flex justify-between">
-                  <span>Orders</span>
-                  <span>0</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Sales</span>
-                  <span className="">$0.00</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Costs</span>
-                  <span>$0.00</span>
-                </div>
-                <div>
-                  <hr className="my-7" />
-                </div>
-                <div className="flex justify-between font-semibold">
-                  <span>Profit</span>
-                  <span className="text-green-500">$0.00</span>
-                </div>
-              </div>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-lg flex flex-col items-center justify-center bg-white p-6 shadow py-20">
+            <div className="flex flex-row justify-center items-center">
+              <svg
+                className="w-[35px] h-[35px] md:w-[50px] md:h-[50px]"
+                viewBox="0 0 51 50"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#a)">
+                  <path
+                    d="m26.91 5.776 4.483 10.683a1.544 1.544 0 0 0 1.287.942l11.474.992a1.544 1.544 0 0 1 .876 2.715L36.325 28.7a1.559 1.559 0 0 0-.49 1.523l2.61 11.296a1.544 1.544 0 0 1-2.295 1.677l-9.86-5.982a1.53 1.53 0 0 0-1.59 0l-9.861 5.982a1.544 1.544 0 0 1-2.295-1.677l2.609-11.296a1.56 1.56 0 0 0-.49-1.523l-8.705-7.593a1.544 1.544 0 0 1 .876-2.715l11.474-.992a1.544 1.544 0 0 0 1.287-.942l4.483-10.683a1.544 1.544 0 0 1 2.833 0Z"
+                    stroke="#FF6D42"
+                    stroke-width="4.341"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </g>
+                <defs>
+                  <clipPath id="a">
+                    <path fill="#fff" d="M.8.2h49.4v49.4H.8z"></path>
+                  </clipPath>
+                </defs>
+              </svg>
+              <p className="font-bold text-3xl sm:text-4xl lg:text-5xl leading-9 text-primary ml-2">
+                4.9
+              </p>
             </div>
-            <a
-              href={ROUTES.DASHBOARD.ORDERS}
-              className="rounded-lg bg-white p-6 shadow transition-all delay-200 duration-500 ease-in-out hover:scale-105"
-            >
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-8">
-                  <div className="flex h-7 w-10 items-center justify-center rounded-full bg-[#ffda6b] text-sm font-medium text-black">
-                    <span>0</span>
-                  </div>
-                  <h2 className="text-sm font-medium">Orders to fulfill</h2>
-                </div>
-                <ChevronRight />
-              </div>
-              <div className="pt-5">
-                <ProgressComponents />
-              </div>
-            </a>
+            <p className="font-medium text-base sm:text-lg leading-6 mt-3 md:mt-6 text-center">
+              Total Series
+            </p>
+          </div>
+          <div className="rounded-lg flex flex-col items-center justify-center bg-white p-6 shadow py-20">
+            <div className="flex flex-row justify-center items-center">
+              <svg
+                className="w-[35px] h-[35px] md:w-[50px] md:h-[50px]"
+                viewBox="0 0 51 50"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#a)">
+                  <path
+                    d="m26.91 5.776 4.483 10.683a1.544 1.544 0 0 0 1.287.942l11.474.992a1.544 1.544 0 0 1 .876 2.715L36.325 28.7a1.559 1.559 0 0 0-.49 1.523l2.61 11.296a1.544 1.544 0 0 1-2.295 1.677l-9.86-5.982a1.53 1.53 0 0 0-1.59 0l-9.861 5.982a1.544 1.544 0 0 1-2.295-1.677l2.609-11.296a1.56 1.56 0 0 0-.49-1.523l-8.705-7.593a1.544 1.544 0 0 1 .876-2.715l11.474-.992a1.544 1.544 0 0 0 1.287-.942l4.483-10.683a1.544 1.544 0 0 1 2.833 0Z"
+                    stroke="#FF6D42"
+                    stroke-width="4.341"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </g>
+                <defs>
+                  <clipPath id="a">
+                    <path fill="#fff" d="M.8.2h49.4v49.4H.8z"></path>
+                  </clipPath>
+                </defs>
+              </svg>
+              <p className="font-bold text-3xl sm:text-4xl lg:text-5xl leading-9 text-primary ml-2">
+                4.9
+              </p>
+            </div>
+            <p className="font-medium text-base sm:text-lg leading-6 mt-3 md:mt-6 text-center">
+              Total category
+            </p>
+          </div>
+          <div className="rounded-lg flex flex-col items-center justify-center bg-white p-6 shadow py-20">
+            <div className="flex flex-row justify-center items-center">
+              <svg
+                className="w-[35px] h-[35px] md:w-[50px] md:h-[50px]"
+                viewBox="0 0 51 50"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#a)">
+                  <path
+                    d="m26.91 5.776 4.483 10.683a1.544 1.544 0 0 0 1.287.942l11.474.992a1.544 1.544 0 0 1 .876 2.715L36.325 28.7a1.559 1.559 0 0 0-.49 1.523l2.61 11.296a1.544 1.544 0 0 1-2.295 1.677l-9.86-5.982a1.53 1.53 0 0 0-1.59 0l-9.861 5.982a1.544 1.544 0 0 1-2.295-1.677l2.609-11.296a1.56 1.56 0 0 0-.49-1.523l-8.705-7.593a1.544 1.544 0 0 1 .876-2.715l11.474-.992a1.544 1.544 0 0 0 1.287-.942l4.483-10.683a1.544 1.544 0 0 1 2.833 0Z"
+                    stroke="#FF6D42"
+                    stroke-width="4.341"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </g>
+                <defs>
+                  <clipPath id="a">
+                    <path fill="#fff" d="M.8.2h49.4v49.4H.8z"></path>
+                  </clipPath>
+                </defs>
+              </svg>
+              <p className="font-bold text-3xl sm:text-4xl lg:text-5xl leading-9 text-primary ml-2">
+                4.9
+              </p>
+            </div>
+            <p className="font-medium text-base sm:text-lg leading-6 mt-3 md:mt-6 text-center">
+              Total products
+            </p>
           </div>
         </div>
       </div>

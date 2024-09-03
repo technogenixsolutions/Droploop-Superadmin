@@ -7,14 +7,9 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-interface Props {
-  variants: any;
-  defaultImageUrl: string;
-}
-
-export function ProductsTable({ variants, defaultImageUrl }: Props) {
+export function ProductsTable() {
   return (
-    <Table>
+    <Table className="mt-9">
       <TableHeader className="w-full">
         <TableRow className="product_table w-full rounded-md bg-[#F2F4F8] px-1 py-5">
           <TableHead className="w-[100px] font-bold text-black">
@@ -38,29 +33,21 @@ export function ProductsTable({ variants, defaultImageUrl }: Props) {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {variants?.map((variant: any) => (
-          <TableRow key={variant.sku} className="product_table">
-            <TableCell className="text-center font-medium">
-              <img
-                src={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4XJymLrGLvo1j24n6976WyUzudcFAQbeOcA&s`}
-                alt="product img"
-                className="h-12 w-12 object-cover"
-              />
-            </TableCell>
-            <TableCell className="text-center font-medium">
-              {variant.sku}
-            </TableCell>
-            <TableCell className="text-center font-medium">
-              {variant.color}
-            </TableCell>
+        <TableRow className="product_table">
+          <TableCell className="text-center font-medium">
+            <img
+              src={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4XJymLrGLvo1j24n6976WyUzudcFAQbeOcA&s`}
+              alt="product img"
+              className="h-12 w-12 object-cover"
+            />
+          </TableCell>
+          <TableCell className="text-center font-medium">product</TableCell>
+          <TableCell className="text-center font-medium">red</TableCell>
 
-            <TableCell className="text-center">{variant.size}</TableCell>
-            <TableCell className="text-center">
-              {variant.totalQuantity}
-            </TableCell>
-            <TableCell className="text-center">{variant.price}</TableCell>
-          </TableRow>
-        ))}
+          <TableCell className="text-center">somthing</TableCell>
+          <TableCell className="text-center">asdf</TableCell>
+          <TableCell className="text-center">5202</TableCell>
+        </TableRow>
       </TableBody>
     </Table>
   );
