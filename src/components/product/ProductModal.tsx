@@ -4,14 +4,31 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { Input } from "../ui/input";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+
+import { Button } from "@/components/ui/button";
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { useState } from "react";
+
+const formSchema = z.object({
+  name: z.string().min(2, {
+    message: "Username must be at least 2 characters.",
+  }),
+  url: z.string().min(2, {
+    message: "Image URL must be",
+  }),
+});
 
 interface ModalProps {
   isOpen: boolean;
@@ -19,36 +36,81 @@ interface ModalProps {
 }
 
 export default function ProductModal({ isOpen, setIsOpen }: ModalProps) {
+  const [imageUrl, setImageUrl] = useState<string>(
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS8Qc25Asr1FA0sDwKA0iniNLa57dc3J6qSyP8PCFpB2keD-4Z2Woy6ivPm29dSkPuinI"
+  );
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      url: "",
+    },
+  });
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    console.log(values);
+  }
+
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent className="ml-2 mr-2 w-full max-w-full overflow-y-scroll overflow-hidden lg:w-[1028px]">
         <DialogHeader>
           <DialogTitle className="text-lg">Product Variants</DialogTitle>
         </DialogHeader>
-        <Table className="w-full">
-          <TableHeader>
-            <TableRow className="hover:bg-transparent">
-              <TableHead className="pl-8">Front Image</TableHead>
-              <TableHead>Price</TableHead>
-              <TableHead>Size</TableHead>
-              <TableHead>Color Name</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            <TableRow>
-              <TableCell className={`flex items-center py-4 pl-8 `}>
-                <img
-                  src={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4XJymLrGLvo1j24n6976WyUzudcFAQbeOcA&s`}
-                  alt="Product 1"
-                  className="mr-4 h-12 w-12 rounded-md object-cover"
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between">
+          <div className="w-full lg:w-1/2">
+            <Form {...form}>
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-8"
+              >
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Name</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Type your name" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </TableCell>
-              <TableCell className={`px-4 py-2 `}>52</TableCell>
-              <TableCell className={`px-4 py-2 `}>25</TableCell>
-              <TableCell className={`px-4 py-2 `}>red</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
+                <FormField
+                  control={form.control}
+                  name="url"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Image URL</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="Type your image url"
+                          {...field}
+                          onChange={(e) => {
+                            field.onChange(e);
+                            setImageUrl(e.target.value);
+                          }}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <Button type="submit" onClick={() => setIsOpen(false)}>
+                  Submit
+                </Button>
+              </form>
+            </Form>
+          </div>
+          <div className="w-full lg:w-1/2">
+            <img
+              className="w-60 mx-auto rounded-lg border p-8"
+              src={imageUrl}
+              alt="photo"
+            />
+          </div>
+        </div>
       </DialogContent>
     </Dialog>
   );
