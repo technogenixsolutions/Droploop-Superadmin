@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 import { ROUTES } from "@/routes";
-import Logo from "@/svg/Logo";
 import LogoutLogoSvg from "@/svg/LogoutLogoSvg";
 import ProfileLogoSvg from "@/svg/ProfileLogoSvg";
 
@@ -34,8 +33,8 @@ export default function Header() {
           <MobileSidebar />
         </div>
         <div className="">
-          <Link to={ROUTES.DASHBOARD.HOME}>
-            <Logo />
+          <Link to={ROUTES.DASHBOARD.HOME} className="text-3xl font-extrabold ">
+            Super<span className="text-[#a990f0]">Admin </span>
           </Link>
         </div>
 

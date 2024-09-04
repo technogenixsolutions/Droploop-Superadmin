@@ -9,30 +9,44 @@ import {
 
 function MyProductsTable() {
   return (
-    <Table className="w-full">
-      <TableHeader>
-        <TableRow className="hover:bg-transparent">
-          <TableHead className="pl-8">Product</TableHead>
-          <TableHead>Brand</TableHead>
-          <TableHead>Variants</TableHead>
-          <TableHead>Last Modified Date</TableHead>
+    <Table className="mt-9">
+      <TableHeader className="w-full">
+        <TableRow className="product_table w-full rounded-md bg-[#F2F4F8] px-1 py-5">
+          <TableHead className="w-[100px] font-bold text-black">
+            Product
+          </TableHead>
+          <TableHead className="text-center font-bold text-black">
+            Sku
+          </TableHead>
+          <TableHead className="text-center font-bold text-black">
+            Color
+          </TableHead>
+          <TableHead className="text-center font-bold text-black">
+            Size
+          </TableHead>
+          <TableHead className="text-center font-bold text-black">
+            Quantity
+          </TableHead>
+          <TableHead className="text-center font-bold text-black">
+            Product Cost
+          </TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
-        <TableRow>
-          <TableCell className={`flex items-center py-4 pl-8 `}>
+        <TableRow className="product_table">
+          <TableCell className="text-center font-medium">
             <img
               src={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4XJymLrGLvo1j24n6976WyUzudcFAQbeOcA&s`}
-              alt="Product 1"
-              className="mr-4 h-12 w-12 rounded-md object-cover"
+              alt="product img"
+              className="h-12 w-12 object-cover"
             />
-            product name
           </TableCell>
-          <TableCell className={`px-4 py-2 `}>
-            <div className="flex items-center gap-2">suppliar name</div>
-          </TableCell>
-          <TableCell className={`px-4 py-2 `}>5</TableCell>
-          <TableCell className={`px-4 py-2 `}>20/25/2525</TableCell>
+          <TableCell className="text-center font-medium">product</TableCell>
+          <TableCell className="text-center font-medium">red</TableCell>
+
+          <TableCell className="text-center">somthing</TableCell>
+          <TableCell className="text-center">asdf</TableCell>
+          <TableCell className="text-center">5202</TableCell>
         </TableRow>
       </TableBody>
     </Table>

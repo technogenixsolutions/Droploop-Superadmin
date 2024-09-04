@@ -20,7 +20,7 @@ export default function Sidebar() {
       label: "Dashboard",
     },
     {
-      title: "Series product",
+      title: "Series",
       href: `${ROUTES.DASHBOARD.FIND_PRODUCTS}`,
       icon: "Search",
       label: "findProduct",

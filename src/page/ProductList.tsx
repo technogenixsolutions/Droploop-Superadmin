@@ -29,7 +29,7 @@ function ProductList() {
         <div className="product_cart mx-auto w-[90%] py-[30px]">
           <div className="flex items-center justify-between">
             <h3 className="m-0 pb-2 text-2xl font-bold leading-[50px] text-white">
-              Series Products
+              Series
             </h3>
             <Button onClick={addNew}>Add New</Button>
           </div>

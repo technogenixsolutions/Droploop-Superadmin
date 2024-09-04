@@ -55,7 +55,7 @@ export default function ProductModal({ isOpen, setIsOpen }: ModalProps) {
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent className="ml-2 mr-2 w-full max-w-full overflow-y-scroll overflow-hidden lg:w-[1028px]">
         <DialogHeader>
-          <DialogTitle className="text-lg">Product Variants</DialogTitle>
+          <DialogTitle className="text-lg">New Series add</DialogTitle>
         </DialogHeader>
         <div className="flex flex-col-reverse md:flex-row items-center justify-between">
           <div className="w-full lg:w-1/2">

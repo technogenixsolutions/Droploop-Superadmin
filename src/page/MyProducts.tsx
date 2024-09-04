@@ -8,7 +8,7 @@ function MyProducts() {
         <div className="absolute left-0 right-0 z-10 h-40 bg-gradient-to-r from-[#8472ed] to-[#b786f6]">
           <div className="product_cart mx-auto w-[90%] py-[30px]">
             <h3 className="m-0 pb-2 text-2xl font-bold leading-[50px] text-white">
-              Imported Products
+              Product List
             </h3>
           </div>
         </div>
