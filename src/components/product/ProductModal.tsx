@@ -85,6 +85,7 @@ export default function ProductModal({ isOpen, setIsOpen }: ModalProps) {
                       <FormLabel>Image URL</FormLabel>
                       <FormControl>
                         <Input
+                          type="file"
                           placeholder="Type your image url"
                           {...field}
                           onChange={(e) => {
